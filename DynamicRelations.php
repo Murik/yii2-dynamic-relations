@@ -55,9 +55,9 @@ class DynamicRelations extends Widget
 
 	public static function relate($model, $attr, $request, $name, $clsname)
 	{
-		if($request[$name])
+		if(isset($request[$name]) && $request[$name])
 		{
-			if($new = $request[$name]['new'])
+			if(isset($request[$name]['new']) && $new = $request[$name]['new'])
 			{
 				foreach( $new as $useless=>$newattrs)
 				{
